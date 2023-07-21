@@ -37,7 +37,7 @@ export default function Contacts() {
       <Section title="Contacts">
         {isLoading && !error && <Loader />}
         {/* {isLoading && !error && <b>Request in progress...</b>} */}
-        {contacts ? (
+        {contacts.length ? (
           <>
             <Filter />
             <ContactList />

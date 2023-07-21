@@ -8,24 +8,26 @@ export const LoginForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+
     dispatch(
       logIn({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
     );
+
     form.reset();
   };
 
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
+      <label className={css.inputBlock}>
         Email
-        <input type="email" name="email" />
+        <input type="email" className={css.inputField} name="email" />
       </label>
-      <label className={css.label}>
+      <label className={css.inputBlock}>
         Password
-        <input type="password" name="password" />
+        <input type="password" className={css.inputField} name="password" />
       </label>
       <button type="submit">Log In</button>
     </form>

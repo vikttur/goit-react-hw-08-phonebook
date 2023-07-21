@@ -18,8 +18,8 @@ export function ContactList() {
 
   return (
     <ul className={css.list}>
-      {filteredContacts.map(({ id, name, phone }) => {
-        return <ContactItems key={id} id={id} name={name} phone={phone} />;
+      {filteredContacts.map(({ id, name, number }) => {
+        return <ContactItems key={id} id={id} name={name} number={number} />;
       })}
     </ul>
   );

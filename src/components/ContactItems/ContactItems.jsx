@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import css from './ContactItems.module.css';
 
-export default function ContactItems({ id, name, phone }) {
+export default function ContactItems({ id, name, number }) {
   const dispatch = useDispatch();
 
   const handleDeleteContact = contactId => {
@@ -13,8 +13,8 @@ export default function ContactItems({ id, name, phone }) {
   return (
     <li className={css.item}>
       <span className={css.marker}></span>
-      <p className={css.label}>{name}:</p>
-      <p className={css.number}>{phone}</p>
+      <p className={css.label}>{name}</p>
+      <p className={css.number}>{number}</p>
       <button
         type="button"
         className={css.button}
@@ -29,5 +29,5 @@ export default function ContactItems({ id, name, phone }) {
 ContactItems.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };

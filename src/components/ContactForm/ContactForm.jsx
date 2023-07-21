@@ -18,7 +18,7 @@ export function ContactForm() {
       return alert(`${newName} is already in contacts.`);
 
     if (newName !== '') {
-      dispatch(addContact({ name: newName, phone: newNumber }));
+      dispatch(addContact({ name: newName, number: newNumber }));
       form.reset();
       return;
     }

@@ -5,6 +5,7 @@
 
 	padding: 20px;
 	border: var(--line-border);
+	border-radius: 8px;
 }
 
 .header {
