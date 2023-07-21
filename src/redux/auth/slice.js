@@ -38,7 +38,8 @@ const authSlice = createSlice({
     [refreshUser.rejected](state) {
       state.isRefreshing = false;
     },
-  },
+	},
+
 });
 
 export const authReducer = authSlice.reducer;

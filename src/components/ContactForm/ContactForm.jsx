@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContactsList } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContactsList } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 import css from './ContactForm.module.css';
 
-export default function ContactForm() {
+export function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContactsList);
 
@@ -17,8 +17,13 @@ export default function ContactForm() {
     if (isExist(contacts, newName))
       return alert(`${newName} is already in contacts.`);
 
-    dispatch(addContact({ name: newName, phone: newNumber }));
-    form.reset();
+    if (newName !== '') {
+      dispatch(addContact({ name: newName, phone: newNumber }));
+      form.reset();
+      return;
+    }
+
+    alert('Contact cannot be empty. Enter some text!');
   };
 
   const isExist = (contacts, newName) => {

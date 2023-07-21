@@ -9,10 +9,6 @@ export const RegisterForm = () => {
     e.preventDefault();
     const form = e.currentTarget;
 
-    // console.log(form.elements.name.value);
-    // console.log(form.elements.email.value);
-    // console.log(form.elements.password.value);
-
     dispatch(
       register({
         name: form.elements.name.value,
@@ -21,7 +17,7 @@ export const RegisterForm = () => {
       })
     );
 
-    // form.reset();
+    form.reset();
   };
 
   return (
