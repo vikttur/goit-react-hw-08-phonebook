@@ -2,22 +2,22 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { Section } from 'components/Section/Section';
-import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Loader } from 'components/Loader/Loader';
 import { Filter } from 'components/Filter/Filter';
+import { ContactList } from 'components/ContactList/ContactList';
 import { Notification } from 'components/Notification/Notification';
-import { fetchContacts } from 'redux/contacts/operations';
 import {
   selectContactsList,
   selectError,
-  selectLoading,
+  selectIsLoading,
 } from 'redux/contacts/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
 
 export default function Contacts() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContactsList);
-  const isLoading = useSelector(selectLoading);
+  const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   useEffect(() => {
@@ -36,7 +36,6 @@ export default function Contacts() {
 
       <Section title="Contacts">
         {isLoading && !error && <Loader />}
-        {/* {isLoading && !error && <b>Request in progress...</b>} */}
         {contacts.length ? (
           <>
             <Filter />

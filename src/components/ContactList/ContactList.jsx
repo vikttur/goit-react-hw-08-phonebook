@@ -3,7 +3,7 @@ import {
   selectContactsList,
   selectContactsFilter,
 } from 'redux/contacts/selectors';
-import ContactItems from '../ContactItems/ContactItems';
+import ContactItems from 'components/ContactItems/ContactItems';
 import css from './ContactList.module.css';
 
 export function ContactList() {

@@ -1,9 +1,11 @@
+import { Section } from 'components/Section/Section';
+
 const styles = {
   container: {
-    minHeight: 'calc(100vh - 50px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    minHeight: '60vh',
   },
   title: {
     fontWeight: 500,
@@ -14,11 +16,10 @@ const styles = {
 
 export default function Home() {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>
-        Contact manager welcome page{' '}
-        {/* <span role="img" aria-label="Greeting icon"></span> */}
-      </h1>
-    </div>
+    <Section title="">
+      <div style={styles.container}>
+        <h1 style={styles.title}>Contact manager welcome page </h1>
+      </div>
+    </Section>
   );
 }
