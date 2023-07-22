@@ -9,13 +9,17 @@ export const LoginForm = () => {
     e.preventDefault();
     const form = e.currentTarget;
 
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
+    const user = {
+      email: form.elements.email.value,
+      password: form.elements.password.value,
+    };
 
+    if (user.email === '' || user.password === '') {
+      alert('Empty fields are not allowed. Enter the data');
+      return;
+    }
+
+    dispatch(logIn(user));
     form.reset();
   };
 
